@@ -81,3 +81,18 @@ body{margin:0;background:linear-gradient(180deg,#f7fafc 0%, #eef2f7 100%);color:
   .slide{height:350px}
   .masonry{column-count:1}
 }
+
+/* small loader (spinner) while first slide loads */
+.slide{position:relative}
+.slide .loader{
+  width:48px;height:48px;border-radius:50%;
+  border:5px solid rgba(255,255,255,0.85);
+  border-top-color:rgba(39,103,73,0.95);
+  animation:spin 1s linear infinite;
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  box-shadow:0 6px 18px rgba(2,6,23,0.08);
+}
+@keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+
+/* optional small style for empty gallery note */
+.gallery-empty { text-align: center; font-style: italic; }
