@@ -1,0 +1,83 @@
+/* styles.css - Updated with slideshow styles */
+:root{
+  --accent:#2f855a;
+  --accent-2:#276749;
+  --bg:#0f1724;
+  --muted:#94a3b8;
+  --card:#f8fafc;
+  --container-max:1100px;
+  --radius:14px;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color-scheme: light;
+}
+
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,#f7fafc 0%, #eef2f7 100%);color:#0b1220;line-height:1.6}
+.container{max-width:var(--container-max);margin:0 auto;padding:1.25rem}
+.site-header .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 0}
+.brand{display:flex;align-items:center;gap:.6rem}
+.brand img{width:48px;height:48px;border-radius:10px;object-fit:cover}
+.brand h1{font-size:1.25rem;margin:0;letter-spacing:0.6px}
+.nav-links{list-style:none;display:flex;gap:1rem;margin:0;padding:0}
+.nav-links a{text-decoration:none;color:inherit;padding:.4rem .6rem;border-radius:8px}
+.nav-links a:hover{background:rgba(39,103,73,0.08)}
+.menu-btn{display:none;background:none;border:0;font-size:1.35rem}
+
+/* HERO */
+.hero{position:relative;overflow:visible;padding-bottom:2rem}
+.hero-inner{padding:3rem 0 2rem}
+.hero h2{font-size:2.1rem;margin:0 0 .5rem}
+.hero p{margin:0 0 1rem;color:var(--muted)}
+.btn{display:inline-block;background:var(--accent);color:white;padding:.6rem 1rem;border-radius:10px;text-decoration:none}
+
+/* Slideshow */
+.slideshow{max-width:var(--container-max);margin:0 auto;padding:0 1.25rem 1.25rem;position:relative}
+.slide{width:100%;height:500px;border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#cfe8d6;position:relative}
+.slide img{width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity .6s ease}
+.slide img.show{opacity:1}
+.slideshow-controls{position:absolute;right:1rem;top:1rem;display:flex;gap:.5rem}
+.slideshow-controls button{background:rgba(255,255,255,0.9);border:0;padding:.35rem .6rem;border-radius:8px;cursor:pointer;box-shadow:0 6px 14px rgba(2,6,23,0.08)}
+.slideshow-controls button:active{transform:translateY(1px)}
+
+/* SECTIONS */
+.section-title{font-size:1.4rem;margin:1.25rem 0 .25rem}
+.section-sub{color:var(--muted);margin:0 0 1rem}
+.gallery-section .masonry{column-count:3;column-gap:12px}
+.masonry-item{display:inline-block;width:100%;margin:0 0 12px;cursor:pointer}
+.masonry-item img{width:100%;display:block;border-radius:10px;transition:transform .25s}
+.masonry-item img:hover{transform:scale(1.02)}
+
+.activities-section .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.card{background:linear-gradient(180deg,#ffffff,#f8fafc);padding:1rem;border-radius:12px;box-shadow:0 6px 18px rgba(15,23,36,0.06)}
+.card h4{margin:.2rem 0 .6rem}
+.about-grid{display:grid;grid-template-columns:1fr 320px;gap:1rem;align-items:center}
+.about-photo img{width:100%;border-radius:12px;display:block}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 320px;gap:1rem;align-items:start}
+.contact-form label{display:block;margin-bottom:.75rem}
+.contact-form input, .contact-form textarea{width:100%;padding:.6rem;border-radius:8px;border:1px solid #e6edf2}
+.contact-info p{margin:.4rem 0}
+.map-placeholder{background:#e6edf2;height:140px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#475569}
+
+/* FOOTER */
+.site-footer{padding:1rem 0;background:transparent;color:#475569;font-size:.9rem;margin-top:2rem}
+.small{opacity:.8}
+
+.lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(3,7,18,0.6);z-index:60;padding:2rem}
+.lightbox img{max-width:90%;max-height:70vh;border-radius:8px;box-shadow:0 20px 40px rgba(2,6,23,0.6)}
+.lb-close{position:absolute;right:1.25rem;top:1.25rem;background:none;border:0;color:white;font-size:1.6rem}
+
+/* Responsive */
+@media (max-width:900px){
+  .hero-gallery{grid-template-columns:repeat(2,1fr)}
+  .masonry{column-count:2}
+  .about-grid,.contact-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .menu-btn{display:block}
+}
+@media (max-width:480px){
+  .hero h2{font-size:1.6rem}
+  .slide{height:350px}
+  .masonry{column-count:1}
+}

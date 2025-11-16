@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ShivaReva Farmstay</title>
+  <meta name="description" content="ShivaReva Farmstay - A peaceful village resort" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container">
+      <div class="brand">
+        <img src="slideshow/slide1.jpg" alt="logo" onerror="this.src='https://images.unsplash.com/photo-1502082553048-f009c37129b9?q=80&w=200&auto=format&fit=crop&crop=faces'"/>
+        <h1>ShivaReva</h1>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#activities">Activities</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+      <button id="menuToggle" class="menu-btn" aria-label="Toggle menu">☰</button>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-inner container">
+        <h2>Welcome to ShivaReva Farmstay</h2>
+        <p>A peaceful village resort — stay close to nature, enjoy simple comforts, and wake up to birdsong.</p>
+        <a href="#gallery" class="btn">View Gallery</a>
+      </div>
+
+      <!-- Slideshow: will load images from /slideshow/ folder (slide1.jpg, slide2.jpg...) -->
+      <div class="slideshow" id="slideshow" aria-live="polite" aria-atomic="true">
+        <div class="slide current" id="slideDisplay" role="img" aria-label="Slideshow image">
+          <!-- Image will be injected here by script -->
+        </div>
+        
+      </div>
+
+    </section>
+  </header>
+
+  <main>
+    <section id="gallery" class="container gallery-section">
+      <h3 class="section-title">Gallery</h3>
+      <p class="section-sub">A glimpse of life at ShivaReva — replace these with your own photos in the <code>galleryimage/</code> folder.</p>
+      <div class="masonry" id="masonry">
+        <!-- gallery images will be injected here from galleryimage/g1.jpg, g2.jpg... -->
+      </div>
+    </section>
+
+    <section id="activities" class="container activities-section">
+      <h3 class="section-title">Activities</h3>
+      <div class="cards">
+        <article class="card">
+          <h4>Village Walks</h4>
+          <p>Guided walks through nearby fields, meeting locals and exploring trails.</p>
+        </article>
+        <article class="card">
+          <h4>Farm Experiences</h4>
+          <p>Join in simple farm tasks—feeding animals, harvesting, or learning traditional cooking.</p>
+        </article>
+        <article class="card">
+          <h4>Bonfire & Local Meals</h4>
+          <p>Evening bonfires with home-cooked meals and local music around the fire.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="container about-section">
+      <h3 class="section-title">About ShivaReva</h3>
+      <div class="about-grid">
+        <div>
+          <p>ShivaReva Farmstay is a small village resort offering quiet stays, simple comforts,
+          and authentic village experiences. We focus on sustainable, local living and
+          connecting guests to nature and community.</p>
+          <ul>
+            <li>Family-run</li>
+            <li>Eco-friendly practices</li>
+            <li>Traditional meals</li>
+          </ul>
+        </div>
+        <div class="about-photo">
+          <img src="galleryimage/g1.jpg" alt="About photo" onerror="this.src='https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=800&auto=format&fit=crop'"/>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="container contact-section">
+      <h3 class="section-title">Contact Us</h3>
+      <p>Book a stay or ask a question — we usually reply within 24 hours.</p>
+      <div class="contact-grid">
+        <form id="contactForm" class="contact-form" onsubmit="handleContact(event)">
+          <label>
+            Name
+            <input type="text" id="name" required />
+          </label>
+          <label>
+            Email
+            <input type="email" id="email" required />
+          </label>
+          <label>
+            Message
+            <textarea id="message" rows="4" required></textarea>
+          </label>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+        <div class="contact-info">
+          <p><strong>Address:</strong> ShivaReva Farmstay, Your Village, District</p>
+          <p><strong>Phone:</strong> +91 12345 67890</p>
+          <p><strong>Email:</strong> <a href="mailto:info@shivareva.example">info@shivareva.example</a></p>
+          <div class="map-placeholder">Map (replace with Google Maps embed)</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> ShivaReva Farmstay — Made with ❤️</p>
+      <p class="small">Hosted on GitHub Pages. Place your slideshow images in <code>slideshow/</code> and gallery images in <code>galleryimage/</code>.</p>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
+    <img id="lbImage" alt="" />
+    <p id="lbCaption"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
